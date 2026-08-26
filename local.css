@@ -34,6 +34,19 @@
   color: #d94a3a;
 }
 
+.poster-grid .project-image {
+  height: auto;
+  aspect-ratio: 0.73;
+}
+
+.poster-grid .project-large .project-image {
+  height: auto;
+}
+
+.poster-grid .project-image img {
+  object-fit: cover;
+}
+
 .dot {
   background: #d94a3a;
 }
