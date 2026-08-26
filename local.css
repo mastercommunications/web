@@ -107,6 +107,175 @@ body,
   color: var(--paper);
 }
 
+.brand-intro {
+  height: 100vh;
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #050505;
+  color: var(--paper);
+}
+
+.brand-intro > img {
+  position: absolute;
+  width: min(100%, 1180px);
+  height: 100%;
+  object-fit: cover;
+  opacity: .92;
+  filter: saturate(1.2) contrast(1.08);
+}
+
+.brand-intro-shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 5, .28);
+}
+
+.brand-intro-lockup {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.brand-symbol {
+  display: block;
+  color: var(--acid);
+  font-size: clamp(80px, 14vw, 210px);
+  font-weight: 700;
+  letter-spacing: -.12em;
+  line-height: .72;
+  margin-bottom: 32px;
+}
+
+.brand-symbol span {
+  color: var(--ink);
+}
+
+.brand-intro h1 {
+  margin: 0;
+  font-size: clamp(34px, 6vw, 88px);
+  line-height: .84;
+  letter-spacing: -.08em;
+  font-weight: 600;
+}
+
+.brand-intro h1 em {
+  color: var(--acid);
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.brand-intro-lockup p {
+  color: var(--paper);
+  font: 10px var(--mono);
+  letter-spacing: .08em;
+  margin-top: 28px;
+  text-transform: uppercase;
+}
+
+.brand-intro-cue {
+  position: absolute;
+  z-index: 1;
+  bottom: 32px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  color: var(--paper);
+  font: 10px var(--mono);
+  text-transform: uppercase;
+}
+
+.brand-intro-cue b {
+  color: var(--acid);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* About page uses the same framed editorial rhythm as the work pages. */
+.about-page {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.about-page .about-layout {
+  min-height: calc(100vh - 92px);
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-page .about-layout::before {
+  content: 'MC / 04';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 35%;
+  background: var(--ink);
+  color: var(--acid);
+  padding: 8vh 5vw;
+  font: 10px var(--mono);
+}
+
+.about-page .statement-label {
+  position: relative;
+  z-index: 1;
+  padding: 12vh 5vw;
+  color: var(--paper);
+}
+
+.about-page .statement-label .eyebrow {
+  color: var(--acid);
+}
+
+.about-page .statement-label .eyebrow span {
+  color: var(--paper);
+}
+
+.about-page .statement-label .bengali-line {
+  color: var(--acid);
+  margin-top: 80px;
+}
+
+.about-page .about-copy {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  padding: 12vh 10vw 12vh 7vw;
+  max-width: none;
+}
+
+.about-page .about-copy h2 {
+  color: var(--ink);
+  font-size: clamp(52px, 7vw, 104px);
+  max-width: 720px;
+}
+
+.about-page .about-copy h2 em {
+  color: var(--acid);
+}
+
+.about-page .about-copy p {
+  max-width: 510px;
+}
+
+.about-page .about-facts {
+  max-width: 650px;
+  margin-top: 60px;
+  border-top-color: var(--line);
+}
+
+.about-page .fact {
+  border-bottom-color: var(--line);
+}
+
+.about-page .fact strong {
+  color: var(--ink);
+}
+
 @media (max-width: 700px) {
   .local-script {
     display: block;
@@ -115,5 +284,136 @@ body,
 
   .bengali-line {
     font-size: 16px;
+  }
+
+  .about-page .about-layout {
+    display: block;
+    min-height: 0;
+  }
+
+  .about-page .about-layout::before {
+    width: 100%;
+    height: 230px;
+    inset: 0 0 auto;
+  }
+
+  .about-page .statement-label {
+    padding: 70px 6vw 55px;
+  }
+
+  .about-page .statement-label .bengali-line {
+    margin-top: 45px;
+  }
+
+  .about-page .about-copy {
+    padding: 75px 6vw 90px;
+  }
+
+  .about-page .about-copy h2 {
+    font-size: 14vw;
+  }
+
+  .brand-intro {
+    min-height: 560px;
+  }
+
+  .brand-intro > img {
+    width: 180%;
+    max-width: none;
+  }
+
+  .brand-intro h1 {
+    font-size: 13vw;
+  }
+}
+
+.brand-intro-logo {
+  position: relative;
+  z-index: 1;
+  width: min(68vw, 560px);
+  aspect-ratio: 280 / 229;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.brand-intro-logo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: saturate(1.2) contrast(1.08);
+}
+
+.brand-intro-lockup {
+  z-index: 2;
+  text-align: center;
+}
+
+.brand-intro-stack {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 700px) {
+  .brand-intro-logo {
+    width: min(88vw, 360px);
+  }
+}
+
+.brand-intro {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.brand-intro-stack {
+  width: min(92vw, 1180px);
+  text-align: center;
+}
+
+.brand-intro-logo {
+  width: min(50vw, 560px);
+  height: min(50vw, 458px);
+  margin: 0 auto;
+  background: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85') center / cover;
+  -webkit-mask: url('images/master-mark.svg') center / contain no-repeat;
+  mask: url('images/master-mark.svg') center / contain no-repeat;
+  transform-origin: center;
+}
+
+.brand-intro-logo img {
+  display: none;
+}
+
+.brand-intro-lockup h1 {
+  margin: 14px 0 0;
+  color: var(--ink);
+  font-size: clamp(120px, 25vw, 360px);
+  line-height: .68;
+  letter-spacing: -.11em;
+  font-weight: 600;
+}
+
+.brand-intro-lockup p {
+  color: var(--ink);
+}
+
+.brand-intro-cue {
+  color: var(--ink);
+}
+
+@media (max-width: 700px) {
+  .brand-intro-logo {
+    width: min(78vw, 340px);
+    height: min(78vw, 278px);
+  }
+
+  .brand-intro-lockup h1 {
+    font-size: 29vw;
   }
 }
