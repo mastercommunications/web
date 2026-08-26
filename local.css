@@ -1,0 +1,50 @@
+:root {
+  --ink: #103b2f;
+  --paper: #f2eadc;
+  --acid: #b9d43b;
+}
+
+.local-script,
+.bengali-line {
+  font-family: 'Noto Serif Bengali', Georgia, serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.local-script {
+  color: #d94a3a;
+  font-size: 12px;
+  margin-left: 14px;
+}
+
+.bengali-line {
+  color: #d94a3a;
+  font-size: 18px;
+  margin: -20px 0 30px;
+}
+
+.footer-script {
+  color: var(--acid);
+  margin: 0 0 24px;
+}
+
+.wordmark-mark span,
+.dot,
+.play-icon {
+  color: #d94a3a;
+}
+
+.dot {
+  background: #d94a3a;
+}
+
+@media (max-width: 700px) {
+  .local-script {
+    display: block;
+    margin: 10px 0 0 17px;
+  }
+
+  .bengali-line {
+    font-size: 16px;
+  }
+}
