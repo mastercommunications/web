@@ -1,7 +1,40 @@
 :root {
-  --ink: #103b2f;
-  --paper: #f2eadc;
-  --acid: #b9d43b;
+  --ink: #b5121b;
+  --paper: #ffffff;
+  --acid: #f47b20;
+  --line: rgba(181, 18, 27, .24);
+}
+
+body,
+.contact-page,
+.detail-page {
+  background: var(--paper);
+}
+
+.work,
+.footer,
+.detail-hero,
+.video-placeholder,
+.internal-footer {
+  background: var(--ink);
+}
+
+.statement,
+.about-page {
+  background: var(--acid);
+}
+
+.detail-poster {
+  background: var(--acid);
+}
+
+.site-nav a span,
+.eyebrow span,
+.archive-card p,
+.credit-list,
+.form-field label,
+.form-submit small {
+  color: var(--ink);
 }
 
 .local-script,
@@ -12,13 +45,13 @@
 }
 
 .local-script {
-  color: #d94a3a;
+  color: var(--ink);
   font-size: 12px;
   margin-left: 14px;
 }
 
 .bengali-line {
-  color: #d94a3a;
+  color: var(--ink);
   font-size: 18px;
   margin: -20px 0 30px;
 }
@@ -31,7 +64,7 @@
 .wordmark-mark span,
 .dot,
 .play-icon {
-  color: #d94a3a;
+  color: var(--ink);
 }
 
 .poster-grid .project-image {
@@ -47,8 +80,31 @@
   object-fit: cover;
 }
 
+.video-placeholder iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .dot {
-  background: #d94a3a;
+  background: var(--ink);
+}
+
+.video-placeholder:before {
+  color: var(--acid);
+}
+
+.detail-page .detail-meta strong,
+.detail-page .video-section .eyebrow,
+.fact span {
+  color: var(--acid);
+}
+
+.contact-page .form-submit button {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 @media (max-width: 700px) {
