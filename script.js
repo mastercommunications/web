@@ -39,11 +39,12 @@ const projectPages = {
 const posterDetails = {
   'barir-choto-chele.jpg': ['Barir Choto Chele', 'Natok'],
   'nabik.jpg': ['Nabik', 'Natok'],
-  'IMG-20260826-WA0026.jpg': ['Danger Bou', 'Natok'],
-  'IMG-20260826-WA0027.jpg': ['Tui', 'Natok'],
-  'IMG-20260826-WA0028.jpg': ['Danger Bou', 'Natok'],
-  'IMG-20260826-WA0029.jpg': ['Tui', 'Natok'],
-  'IMG-20260826-WA0030.jpg': ['Boro Bhai', 'Natok'],
+  'danger-bou.jpg': ['Danger Bou', 'Natok'],
+  'tui.jpg': ['Tui', 'Natok'],
+  'tui-variant2.jpg': ['Tui', 'Natok'],
+  'tui-variant3.jpg': ['Tui', 'Natok'],
+  'tui-variant4.jpg': ['Tui', 'Natok'],
+  'boro-bhai.jpg': ['Boro Bhai', 'Natok'],
   'betar-prem.jpg': ['Betar Prem', 'Natok'],
   'omar.jpg': ['OMAR', 'Film'],
   'omar-streaming.jpg': ['OMAR / Streaming', 'Film'],
@@ -53,13 +54,15 @@ const posterDetails = {
 
 const posterGroups = {
   'omar.html': ['omar.jpg', 'omar-streaming.jpg', 'omar-denmark.jpg', 'omar-film.jpg'],
-  'tui.html': ['IMG-20260826-WA0027.jpg', 'IMG-20260826-WA0029.jpg', 'IMG-20260826-WA0032.jpg'],
-  'danger-bou.html': ['IMG-20260826-WA0030.jpg', 'IMG-20260826-WA0028.jpg']
+  'tui.html': ['tui.jpg', 'tui-variant2.jpg', 'tui-variant3.jpg', 'tui-variant4.jpg'],
+  'boro-bhai.html': ['boro-bhai.jpg'],
+  'danger-bou.html': ['danger-bou.jpg']
 };
 
 const groupLabels = {
   'omar.html': 'OMAR',
   'tui.html': 'Tui',
+  'boro-bhai.html': 'Boro Bhai',
   'danger-bou.html': 'Danger Bou'
 };
 
@@ -98,9 +101,9 @@ const archiveGrid = document.querySelector('.archive-grid');
 if (archiveGrid) {
   const archivePosters = [
     ['nabik.jpg', 'Nabik', 'Natok'],
-    ['IMG-20260826-WA0026.jpg', 'Danger Bou', 'Natok'],
+    ['danger-bou.jpg', 'Danger Bou', 'Natok'],
     ['betar-prem.jpg', 'Betar Prem', 'Natok'],
-    ['IMG-20260826-WA0032.jpg', 'Tui', 'Natok'],
+    ['tui-variant2.jpg', 'Tui', 'Natok'],
     ['omar-streaming.jpg', 'OMAR / Streaming', 'Film'],
     ['omar-denmark.jpg', 'OMAR / Denmark', 'Film']
   ];
