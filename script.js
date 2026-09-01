@@ -37,21 +37,22 @@ const projectPages = {
 };
 
 const posterDetails = {
-  'IMG-20260826-WA0023.jpg': ['Barir Choto Chele', 'Natok'],
-  'IMG-20260826-WA0024.jpg': ['Nabik', 'Natok'],
+  'barir-choto-chele.jpg': ['Barir Choto Chele', 'Natok'],
+  'nabik.jpg': ['Nabik', 'Natok'],
   'IMG-20260826-WA0026.jpg': ['Danger Bou', 'Natok'],
   'IMG-20260826-WA0027.jpg': ['Tui', 'Natok'],
   'IMG-20260826-WA0028.jpg': ['Danger Bou', 'Natok'],
   'IMG-20260826-WA0029.jpg': ['Tui', 'Natok'],
-  'IMG-20260826-WA0030.jpg': ['Danger Bou', 'Natok'],
-  'IMG-20260826-WA0031.jpg': ['Betar Prem', 'Natok'],
-  'IMG-20260826-WA0032.jpg': ['Tui', 'Natok'],
-  'IMG-20260826-WA0035.jpg': ['OMAR / Streaming', 'Film'],
-  'IMG-20260826-WA0037.jpg': ['OMAR / Denmark', 'Film']
+  'IMG-20260826-WA0030.jpg': ['Boro Bhai', 'Natok'],
+  'betar-prem.jpg': ['Betar Prem', 'Natok'],
+  'omar.jpg': ['OMAR', 'Film'],
+  'omar-streaming.jpg': ['OMAR / Streaming', 'Film'],
+  'omar-denmark.jpg': ['OMAR / Denmark', 'Film'],
+  'omar-film.jpg': ['OMAR', 'Film']
 };
 
 const posterGroups = {
-  'omar.html': ['IMG-20260826-WA0025.jpg', 'IMG-20260826-WA0035.jpg', 'IMG-20260826-WA0037.jpg', 'IMG-20260826-WA0038.jpg'],
+  'omar.html': ['omar.jpg', 'omar-streaming.jpg', 'omar-denmark.jpg', 'omar-film.jpg'],
   'tui.html': ['IMG-20260826-WA0027.jpg', 'IMG-20260826-WA0029.jpg', 'IMG-20260826-WA0032.jpg'],
   'danger-bou.html': ['IMG-20260826-WA0030.jpg', 'IMG-20260826-WA0028.jpg']
 };
@@ -96,13 +97,12 @@ if (detailMain && detailVideo && detailPoster && posterGroups[detailPage]) {
 const archiveGrid = document.querySelector('.archive-grid');
 if (archiveGrid) {
   const archivePosters = [
-    ['IMG-20260826-WA0024.jpg', 'Nabik', 'Natok'],
+    ['nabik.jpg', 'Nabik', 'Natok'],
     ['IMG-20260826-WA0026.jpg', 'Danger Bou', 'Natok'],
-    ['IMG-20260826-WA0028.jpg', 'Danger Bou', 'Natok'],
-    ['IMG-20260826-WA0031.jpg', 'Betar Prem', 'Natok'],
+    ['betar-prem.jpg', 'Betar Prem', 'Natok'],
     ['IMG-20260826-WA0032.jpg', 'Tui', 'Natok'],
-    ['IMG-20260826-WA0035.jpg', 'OMAR / Streaming', 'Film'],
-    ['IMG-20260826-WA0037.jpg', 'OMAR / Denmark', 'Film']
+    ['omar-streaming.jpg', 'OMAR / Streaming', 'Film'],
+    ['omar-denmark.jpg', 'OMAR / Denmark', 'Film']
   ];
   archivePosters.forEach(([fileName, title, type]) => {
     if (archiveGrid.querySelector(`img[src$="${fileName}"]`)) return;
@@ -166,7 +166,7 @@ document.querySelectorAll('.project, .archive-card').forEach((project) => {
   const image = project.querySelector('img');
   const fileName = image?.src.split('/').pop();
   const groupEntry = Object.entries(posterGroups).find(([, files]) => files.includes(fileName));
-  const isRequestedPoster = fileName === 'IMG-20260826-WA0031.jpg';
+  const isRequestedPoster = fileName === 'betar-prem.jpg';
   if (groupEntry && fileName !== groupEntry[1][0] && !isRequestedPoster) project.hidden = true;
 });
 
