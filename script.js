@@ -28,7 +28,7 @@ const projectPages = {
   'IMG-20260826-WA0025.jpg': 'omar.html',
   'IMG-20260826-WA0023.jpg': 'featured-natok.html',
   'IMG-20260826-WA0024.jpg': 'nabik.html',
-  'IMG-20260826-WA0027.jpg': 'boro-bhai.html',
+  'IMG-20260826-WA0027.jpg': 'tui.html',
   'IMG-20260826-WA0026.jpg': 'danger-bou.html',
   'IMG-20260826-WA0028.jpg': 'danger-bou.html',
   'IMG-20260826-WA0030.jpg': 'danger-bou.html',
@@ -40,25 +40,25 @@ const posterDetails = {
   'IMG-20260826-WA0023.jpg': ['Barir Choto Chele', 'Natok'],
   'IMG-20260826-WA0024.jpg': ['Nabik', 'Natok'],
   'IMG-20260826-WA0026.jpg': ['Danger Bou', 'Natok'],
-  'IMG-20260826-WA0027.jpg': ['Boro Bhai', 'Natok'],
+  'IMG-20260826-WA0027.jpg': ['Tui', 'Natok'],
   'IMG-20260826-WA0028.jpg': ['Danger Bou', 'Natok'],
-  'IMG-20260826-WA0029.jpg': ['Boro Bhai', 'Natok'],
-  'IMG-20260826-WA0030.jpg': ['Boro Bhai', 'Natok'],
+  'IMG-20260826-WA0029.jpg': ['Tui', 'Natok'],
+  'IMG-20260826-WA0030.jpg': ['Danger Bou', 'Natok'],
   'IMG-20260826-WA0031.jpg': ['Betar Prem', 'Natok'],
-  'IMG-20260826-WA0032.jpg': ['Boro Bhai', 'Natok'],
+  'IMG-20260826-WA0032.jpg': ['Tui', 'Natok'],
   'IMG-20260826-WA0035.jpg': ['OMAR / Streaming', 'Film'],
   'IMG-20260826-WA0037.jpg': ['OMAR / Denmark', 'Film']
 };
 
 const posterGroups = {
   'omar.html': ['IMG-20260826-WA0025.jpg', 'IMG-20260826-WA0035.jpg', 'IMG-20260826-WA0037.jpg', 'IMG-20260826-WA0038.jpg'],
-  'boro-bhai.html': ['IMG-20260826-WA0027.jpg', 'IMG-20260826-WA0029.jpg', 'IMG-20260826-WA0032.jpg'],
+  'tui.html': ['IMG-20260826-WA0027.jpg', 'IMG-20260826-WA0029.jpg', 'IMG-20260826-WA0032.jpg'],
   'danger-bou.html': ['IMG-20260826-WA0030.jpg', 'IMG-20260826-WA0028.jpg']
 };
 
 const groupLabels = {
   'omar.html': 'OMAR',
-  'boro-bhai.html': 'Boro Bhai',
+  'tui.html': 'Tui',
   'danger-bou.html': 'Danger Bou'
 };
 
@@ -100,7 +100,7 @@ if (archiveGrid) {
     ['IMG-20260826-WA0026.jpg', 'Danger Bou', 'Natok'],
     ['IMG-20260826-WA0028.jpg', 'Danger Bou', 'Natok'],
     ['IMG-20260826-WA0031.jpg', 'Betar Prem', 'Natok'],
-    ['IMG-20260826-WA0032.jpg', 'Boro Bhai', 'Natok'],
+    ['IMG-20260826-WA0032.jpg', 'Tui', 'Natok'],
     ['IMG-20260826-WA0035.jpg', 'OMAR / Streaming', 'Film'],
     ['IMG-20260826-WA0037.jpg', 'OMAR / Denmark', 'Film']
   ];
@@ -138,7 +138,7 @@ if (window.location.pathname.endsWith('/nabik.html')) {
 
 document.querySelectorAll('h2, h3, p').forEach((element) => {
   if (element.textContent.includes('Betal Prem')) {
-    element.textContent = element.textContent.replaceAll('Betal Prem', 'Boro Bhai');
+    element.textContent = element.textContent.replaceAll('Betal Prem', 'Tui');
   }
 });
 

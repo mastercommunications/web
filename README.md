@@ -15,7 +15,7 @@ Open `http://localhost:4173`.
 - `index.html` - homepage with the centered logo entrance, interactive poster deck, filters, and scroll-driven logo animation.
 - `work.html` - full poster archive.
 - `omar.html` - OMAR film details and YouTube player.
-- `danger-bou.html`, `nabik.html`, `boro-bhai.html`, `featured-natok.html`, `original-natok.html` - drama/natok detail pages.
+- `danger-bou.html`, `nabik.html`, `tui.html`, `featured-natok.html`, `original-natok.html` - drama/natok detail pages.
 - `about.html` - studio information.
 - `images/` - supplied poster artwork and the text-free `master-mark.svg` logo mark.
 - `styles.css`, `local.css`, `pages.css`, `detail.css` - shared and page-specific styling.
