@@ -68,7 +68,7 @@ body,
 }
 
 .wordmark-mark {
-  content: url('images/master-mark.svg');
+  content: url('../images/master-mark.svg');
   width: 38px;
   height: 28px;
   object-fit: contain;
@@ -661,8 +661,8 @@ body,
   height: min(50vw, 458px);
   margin: 0 auto;
   background: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85') center / cover;
-  -webkit-mask: url('images/master-mark.svg') center / contain no-repeat;
-  mask: url('images/master-mark.svg') center / contain no-repeat;
+  -webkit-mask: url('../images/master-mark.svg') center / contain no-repeat;
+  mask: url('../images/master-mark.svg') center / contain no-repeat;
   transform-origin: center;
 }
 

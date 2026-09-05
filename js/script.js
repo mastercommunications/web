@@ -1,6 +1,10 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
 const modal = document.querySelector('.modal');
+const scriptUrl = document.currentScript?.src ? new URL(document.currentScript.src) : new URL('js/script.js', window.location.href);
+const siteRoot = new URL('../', scriptUrl);
+const resolveSitePath = (relativePath) => new URL(relativePath, siteRoot).pathname;
+const assetPath = (fileName) => resolveSitePath(`images/${fileName}`);
 
 document.querySelectorAll('.nav-contact, [href="contact.html"], .contact-link').forEach((link) => link.remove());
 
@@ -25,25 +29,25 @@ if (detailMain && detailHero && videoSection) {
 }
 
 const projectPages = {
-  'bhalobasha-nai.jpg': 'bhalobasha-nai.html',
-  'danger-love-1.jpg': 'danger-love.html',
-  'danger-love-2.jpg': 'danger-love.html',
-  'dating-sating-2.jpg': 'dating-sating.html',
-  'medal.jpg': 'medal.html',
-  'romeo-juliet.jpg': 'romeo-juliet.html',
-  'swopner-poster.jpg': 'swopner-poster.html',
-  'devdas-juliet.jpg': 'devdas-juliet.html',
-  'tufan.jpg': 'tufan.html',
-  'sweeper-man.jpg': 'sweeper-man.html',
-  'IMG-20260826-WA0025.jpg': 'omar.html',
-  'IMG-20260826-WA0023.jpg': 'featured-natok.html',
-  'IMG-20260826-WA0024.jpg': 'nabik.html',
-  'IMG-20260826-WA0027.jpg': 'tui.html',
-  'IMG-20260826-WA0026.jpg': 'danger-bou.html',
-  'IMG-20260826-WA0028.jpg': 'danger-bou.html',
-  'IMG-20260826-WA0030.jpg': 'danger-bou.html',
-  'IMG-20260826-WA0031.jpg': 'betar-prem.html',
-  'IMG-20260826-WA0038.jpg': 'omar.html'
+  'bhalobasha-nai.jpg': 'pages/dramas/bhalobasha-nai.html',
+  'danger-love-1.jpg': 'pages/dramas/danger-love.html',
+  'danger-love-2.jpg': 'pages/dramas/danger-love.html',
+  'dating-sating-2.jpg': 'pages/dramas/dating-sating.html',
+  'medal.jpg': 'pages/dramas/medal.html',
+  'romeo-juliet.jpg': 'pages/dramas/romeo-juliet.html',
+  'swopner-poster.jpg': 'pages/dramas/swopner-poster.html',
+  'devdas-juliet.jpg': 'pages/dramas/devdas-juliet.html',
+  'tufan.jpg': 'pages/dramas/tufan.html',
+  'sweeper-man.jpg': 'pages/dramas/sweeper-man.html',
+  'IMG-20260826-WA0025.jpg': 'pages/dramas/omar.html',
+  'IMG-20260826-WA0023.jpg': 'pages/dramas/featured-natok.html',
+  'IMG-20260826-WA0024.jpg': 'pages/dramas/nabik.html',
+  'IMG-20260826-WA0027.jpg': 'pages/dramas/tui.html',
+  'IMG-20260826-WA0026.jpg': 'pages/dramas/danger-bou.html',
+  'IMG-20260826-WA0028.jpg': 'pages/dramas/danger-bou.html',
+  'IMG-20260826-WA0030.jpg': 'pages/dramas/danger-bou.html',
+  'IMG-20260826-WA0031.jpg': 'pages/dramas/betar-prem.html',
+  'IMG-20260826-WA0038.jpg': 'pages/dramas/omar.html'
 };
 
 const posterDetails = {
@@ -97,7 +101,7 @@ if (detailMain && detailVideo && detailPoster && posterGroups[detailPage]) {
   const posterList = posterGroups[detailPage];
   detailPoster.innerHTML = '<div class="detail-gallery-window"><div class="detail-gallery"></div></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous poster">←</button><span class="gallery-current">01 / 00</span><button type="button" data-gallery-next aria-label="Next poster">→</button></div>';
   const detailGallery = detailPoster.querySelector('.detail-gallery');
-  detailGallery.innerHTML = posterList.map((fileName, index) => `<figure class="gallery-slide"><img src="images/${fileName}" alt="${groupLabels[detailPage]} poster ${index + 1}"><figcaption>${String(index + 1).padStart(2, '0')} / ${String(posterList.length).padStart(2, '0')}</figcaption></figure>`).join('');
+  detailGallery.innerHTML = posterList.map((fileName, index) => `<figure class="gallery-slide"><img src="${assetPath(fileName)}" alt="${groupLabels[detailPage]} poster ${index + 1}"><figcaption>${String(index + 1).padStart(2, '0')} / ${String(posterList.length).padStart(2, '0')}</figcaption></figure>`).join('');
   const galleryCurrent = detailPoster.querySelector('.gallery-current');
   const slides = [...detailGallery.querySelectorAll('.gallery-slide')];
   let galleryIndex = 0;
@@ -144,8 +148,8 @@ if (archiveGrid) {
     if (archiveGrid.querySelector(`img[src$="${fileName}"]`)) return;
     const card = document.createElement('a');
     card.className = 'archive-card';
-    card.href = projectPages[fileName] || 'work.html';
-    card.innerHTML = `<img src="images/${fileName}" alt="${title} poster"><h2>${title}</h2><p>${type} · Master Communications</p>`;
+    card.href = resolveSitePath(projectPages[fileName] || 'pages/main/work.html');
+    card.innerHTML = `<img src="${assetPath(fileName)}" alt="${title} poster"><h2>${title}</h2><p>${type} · Master Communications</p>`;
     archiveGrid.appendChild(card);
   });
 }
@@ -192,7 +196,7 @@ document.querySelectorAll('.project, .archive-card').forEach((project) => {
   if (detailPage) {
     project.addEventListener('click', (event) => {
       if (event.target.closest('[data-reel]')) return;
-      window.location.href = detailPage;
+      window.location.href = resolveSitePath(detailPage);
     });
     project.style.cursor = 'pointer';
   }
