@@ -85,8 +85,10 @@ const posterGroups = {
   'tui.html': ['tui.jpg', 'tui-variant2.jpg', 'tui-variant3.jpg', 'tui-variant4.jpg'],
   'boro-bhai.html': ['boro-bhai.jpg'],
   'danger-bou.html': ['danger-bou.jpg'],
-  'danger-love.html': ['danger-love-1.jpg', 'danger-love-2.jpg'],
-  'dating-sating.html': ['dating-sating-2.jpg', 'IMG-20260827-WA0011.jpg']
+  'danger-love.html': ['danger-love-1.jpg', 'danger-love-2.jpg', 'danger-love-3.jpg'],
+  'dating-sating.html': ['dating-sating-2.jpg', 'IMG-20260827-WA0011.jpg'],
+  'devdas-juliet.html': ['devdas-juliet.jpg', 'devdas-juliet-2.jpg'],
+  'romeo-juliet.html': ['romeo-juliet.jpg', 'romeo-juliet-2.jpg']
 };
 
 const groupLabels = {
@@ -95,7 +97,9 @@ const groupLabels = {
   'boro-bhai.html': 'Boro Bhai',
   'danger-bou.html': 'Danger Bou',
   'danger-love.html': 'Danger Love',
-  'dating-sating.html': 'Dating Sating'
+  'dating-sating.html': 'Dating Sating',
+  'devdas-juliet.html': 'Devdas Juliet',
+  'romeo-juliet.html': 'Romeo Juliet'
 };
 
 const detailPage = window.location.pathname.split('/').pop();
