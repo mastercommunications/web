@@ -25,6 +25,16 @@ if (detailMain && detailHero && videoSection) {
 }
 
 const projectPages = {
+  'bhalobasha-nai.jpg': 'bhalobasha-nai.html',
+  'danger-love-1.jpg': 'danger-love.html',
+  'danger-love-2.jpg': 'danger-love.html',
+  'dating-sating-2.jpg': 'dating-sating.html',
+  'medal.jpg': 'medal.html',
+  'romeo-juliet.jpg': 'romeo-juliet.html',
+  'swopner-poster.jpg': 'swopner-poster.html',
+  'devdas-juliet.jpg': 'devdas-juliet.html',
+  'tufan.jpg': 'tufan.html',
+  'sweeper-man.jpg': 'sweeper-man.html',
   'IMG-20260826-WA0025.jpg': 'omar.html',
   'IMG-20260826-WA0023.jpg': 'featured-natok.html',
   'IMG-20260826-WA0024.jpg': 'nabik.html',
@@ -37,6 +47,16 @@ const projectPages = {
 };
 
 const posterDetails = {
+  'bhalobasha-nai.jpg': ['Bhalobasha Nai', 'Natok'],
+  'danger-love-1.jpg': ['Danger Love', 'Natok'],
+  'danger-love-2.jpg': ['Danger Love', 'Natok'],
+  'dating-sating-2.jpg': ['Dating Sating', 'Natok'],
+  'medal.jpg': ['Medal', 'Natok'],
+  'romeo-juliet.jpg': ['Romeo Juliet', 'Natok'],
+  'swopner-poster.jpg': ['Swopner Poster', 'Natok'],
+  'devdas-juliet.jpg': ['Devdas Juliet', 'Natok'],
+  'tufan.jpg': ['Tufan', 'Natok'],
+  'sweeper-man.jpg': ['Sweeper Man', 'Natok'],
   'barir-choto-chele.jpg': ['Barir Choto Chele', 'Natok'],
   'nabik.jpg': ['Nabik', 'Natok'],
   'danger-bou.jpg': ['Danger Bou', 'Natok'],
@@ -100,6 +120,15 @@ if (detailMain && detailVideo && detailPoster && posterGroups[detailPage]) {
 const archiveGrid = document.querySelector('.archive-grid');
 if (archiveGrid) {
   const archivePosters = [
+    ['bhalobasha-nai.jpg', 'Bhalobasha Nai', 'Natok'],
+    ['danger-love-1.jpg', 'Danger Love', 'Natok'],
+    ['dating-sating-2.jpg', 'Dating Sating', 'Natok'],
+    ['medal.jpg', 'Medal', 'Natok'],
+    ['romeo-juliet.jpg', 'Romeo Juliet', 'Natok'],
+    ['swopner-poster.jpg', 'Swopner Poster', 'Natok'],
+    ['devdas-juliet.jpg', 'Devdas Juliet', 'Natok'],
+    ['tufan.jpg', 'Tufan', 'Natok'],
+    ['sweeper-man.jpg', 'Sweeper Man', 'Natok'],
     ['nabik.jpg', 'Nabik', 'Natok'],
     ['danger-bou.jpg', 'Danger Bou', 'Natok'],
     ['betar-prem.jpg', 'Betar Prem', 'Natok'],
@@ -187,15 +216,19 @@ document.querySelectorAll('.site-nav a').forEach((link) => {
 
 document.querySelectorAll('[data-reel]').forEach((button) => {
   button.addEventListener('click', () => {
+    if (!modal) return;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
   });
 });
 
-document.querySelector('[data-close]').addEventListener('click', closeModal);
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) closeModal();
-});
+const closeButton = document.querySelector('[data-close]');
+if (closeButton && modal) closeButton.addEventListener('click', closeModal);
+if (modal) {
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+}
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeModal();
 });
