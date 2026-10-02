@@ -86,7 +86,7 @@ const posterGroups = {
   'boro-bhai.html': ['boro-bhai.jpg'],
   'danger-bou.html': ['danger-bou.jpg'],
   'danger-love.html': ['danger-love-1.jpg', 'danger-love-2.jpg', 'danger-love-3.jpg'],
-  'dating-sating.html': ['dating-sating-2.jpg', 'IMG-20260827-WA0011.jpg'],
+  'dating-sating.html': ['dating-sating-2.jpg'],
   'devdas-juliet.html': ['devdas-juliet.jpg', 'devdas-juliet-2.jpg'],
   'romeo-juliet.html': ['romeo-juliet.jpg', 'romeo-juliet-2.jpg']
 };
